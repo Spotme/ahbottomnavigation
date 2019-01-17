@@ -1,4 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jaredsburrows.license'
+
+licenseReport {
+    copyHtmlReportToAssets = false
+    copyJsonReportToAssets = false
+}
 
 ext {
     bintrayRepo = 'maven'
