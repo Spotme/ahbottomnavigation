@@ -1,6 +1,43 @@
 ## Changelog
 
-### Newest version: 2.0.6
+### Newest version: 2.3.4
+* Fix a bug with the disappearing animation for the notification
+
+### 2.3.3
+* Re-add old notification animation behavior to avoid a bug (from 2.3.0: Badge removal no longer clears text prior to animation)
+
+### 2.3.2
+* Remove notification animation listener to avoid weird behaviors
+
+### 2.3.1
+* Fix animation duration for notification
+
+### 2.3.0
+* Migrate project to AndroidX
+* Update libraries versions
+* Incorporate padding into item width calculation
+* Badge removal no longer clears text prior to animation
+* Fix NPE crash when currentItem was switched programmatically with titleState = TitleState.SHOW_WHEN_ACTIVE_FORCE
+* Update isClassic() in AHBottomNavigation
+* Navigation item layouts for >= SDK 21 now use item_background drawable for background.
+* Only change drawable colour if forceTint is true (default value)
+* Add method `addItemAtIndex(int index, AHBottomNavigationItem item)` (with warning when index is out of bounds)
+
+### 2.2.0
+* Update libraries versions
+* Add another state for titles: `SHOW_WHEN_ACTIVE_FORCE` (PR #313)
+
+### 2.1.0
+
+* Update libraries versions
+* Add enable/disable tab state (with custom color)
+* Add new xml attributes (`colored`, `accentColor`, `inactiveColor`, `disableColor`, `coloredActive`, `coloredInactive`)
+* Add param `notificationAnimationDuration`
+* Update getDrawable method with `AppCompatResources.getDrawable(context, drawableRes);`
+If you use drawable selector and target API < 21, don't forget to add this:
+`AppCompatDelegate.setCompatVectorFromResourcesEnabled(true); `
+
+### 2.0.6
 
 * Fix selected item background for API >= 21
 * Fix `isHidden()` method

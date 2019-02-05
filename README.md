@@ -2,13 +2,13 @@
 # AHBottomNavigation
 Library to implement the Bottom Navigation component from Material Design guidelines (minSdkVersion=14).
 
+**Warning: For >= 2.3.0, you need to use AndroidX in your project**
+
 ## Demo
 <img src="https://raw.githubusercontent.com/aurelhubert/ahbottomnavigation/master/demo1.gif" width="208" height="368" /> <img src="https://raw.githubusercontent.com/aurelhubert/ahbottomnavigation/master/demo2.gif" width="208" height="368" /> <img src="https://raw.githubusercontent.com/aurelhubert/ahbottomnavigation/master/demo3.gif" width="208" height="368" /> <img src="https://raw.githubusercontent.com/aurelhubert/ahbottomnavigation/master/demo4.gif" width="208" height="368" />
 
-## What's new (2.0.6) - [Changelog](https://github.com/aurelhubert/ahbottomnavigation/blob/master/CHANGELOG.md)
-* Fix selected item background for API >= 21
-* Fix `isHidden()` method
-* Update design support library version
+## What's new (2.3.4) - [Changelog](https://github.com/aurelhubert/ahbottomnavigation/blob/master/CHANGELOG.md)
+* Fix a bug with the disappearing animation for the notification
 
 ## Features
 * Follow the bottom navigation guidelines (https://www.google.com/design/spec/components/bottom-navigation.html)
@@ -17,13 +17,14 @@ Library to implement the Bottom Navigation component from Material Design guidel
 * Add a OnTabSelectedListener to detect tab selection
 * Support icon font color with "setForceTint(true)"
 * Manage notififcations for each item
+* Enable/disable tab state
 
 ## How to?
 
 ### Gradle
 ```groovy
 dependencies {
-    compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
+    compile 'com.aurelhubert:ahbottomnavigation:2.3.4'
 }
 ```
 ### XML
@@ -35,7 +36,7 @@ dependencies {
 ```
 OR
 ```xml
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -48,7 +49,7 @@ OR
         android:layout_height="wrap_content"
         android:layout_gravity="bottom" />
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 ```
 
 ### Activity/Fragment
@@ -111,6 +112,11 @@ AHNotification notification = new AHNotification.Builder()
      .build();
 bottomNavigation.setNotification(notification, 1);
 
+// Enable / disable item & set disable color
+bottomNavigation.enableItemAtPosition(2);
+bottomNavigation.disableItemAtPosition(2);
+bottomNavigation.setItemDisableColor(Color.parseColor("#3A000000"));
+
 // Set listeners
 bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
 	@Override
@@ -143,7 +149,7 @@ Feel free to create issues / pull requests.
 ## License
 ```
 AHBottomNavigation library for Android
-Copyright (c) 2017 Aurelien Hubert (http://github.com/aurelhubert).
+Copyright (c) 2018 Aurelien Hubert (http://github.com/aurelhubert).
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
