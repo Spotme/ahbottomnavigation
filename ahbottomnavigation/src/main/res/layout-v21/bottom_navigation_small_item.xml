@@ -24,11 +24,12 @@
         android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
         android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
         android:alpha="1"
+        android:ellipsize="end"
         android:gravity="center"
         android:lines="1"
         android:textColor="@color/colorBottomNavigationInactive"
         android:textSize="14sp"
-        tools:text="Label One" />
+        tools:text="Label One"/>
 
     <TextView
         android:id="@+id/bottom_navigation_notification"
