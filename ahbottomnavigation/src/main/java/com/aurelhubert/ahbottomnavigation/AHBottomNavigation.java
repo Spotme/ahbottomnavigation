@@ -1362,17 +1362,18 @@ public class AHBottomNavigation extends FrameLayout {
 
 	/**
 	 * Set the notification number
-	 *
-	 * @param nbNotification int
-	 * @param itemPosition   int
 	 */
 	@Deprecated
-	public void setNotification(int nbNotification, int itemPosition) {
+	public void setNotification(int itemPosition, int itemValue, boolean displayEmptyBadge) {
 		if (itemPosition < 0 || itemPosition > items.size() - 1) {
             throw new IndexOutOfBoundsException(String.format(Locale.US, EXCEPTION_INDEX_OUT_OF_BOUNDS, itemPosition, items.size()));
 		}
-        final String title = nbNotification == 0 ? "" : String.valueOf(nbNotification);
-        notifications.set(itemPosition, AHNotification.justText(title));
+		if (displayEmptyBadge) {
+			notifications.set(itemPosition, AHNotification.justText(" "));
+		} else {
+			final String notificationText = itemValue == 0 ? "" : String.valueOf(itemValue);
+			notifications.set(itemPosition, AHNotification.justText(notificationText));
+		}
 		updateNotifications(false, itemPosition);
 	}
 
