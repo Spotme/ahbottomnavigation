@@ -386,6 +386,7 @@ public class AHBottomNavigation extends FrameLayout {
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
 			icon.setImageDrawable(item.getDrawable(context));
+			icon.setContentDescription("BottomBar" + item.getTitle(context));
 			title.setText(item.getTitle(context));
 
 			if (titleTypeface != null) {
@@ -498,6 +499,7 @@ public class AHBottomNavigation extends FrameLayout {
 			TextView title = (TextView) view.findViewById(R.id.bottom_navigation_small_item_title);
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 			icon.setImageDrawable(item.getDrawable(context));
+			icon.setContentDescription("BottomBar" + item.getTitle(context));
 
 			if (titleState != TitleState.ALWAYS_HIDE) {
 				title.setText(item.getTitle(context));
