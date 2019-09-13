@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import androidx.core.content.ContextCompat;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
+
 
 /**
  * AHBottomNavigationItem

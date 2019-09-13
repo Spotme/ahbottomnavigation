@@ -98,7 +98,7 @@ public class AHBottomNavigation extends FrameLayout {
 	private Typeface titleTypeface;
 	private int defaultBackgroundColor = Color.WHITE;
 	private int defaultBackgroundResource = 0;
-	private @ColorInt int itemActiveColor;
+	int itemActiveColor;
 	private @ColorInt int itemInactiveColor;
 	private @ColorInt int titleColorActive;
 	private @ColorInt int titleColorInactive;
@@ -1214,8 +1214,7 @@ public class AHBottomNavigation extends FrameLayout {
 	public void manageFloatingActionButtonBehavior(FloatingActionButton fab) {
 		if (fab.getParent() instanceof CoordinatorLayout) {
 			AHBottomNavigationFABBehavior fabBehavior = new AHBottomNavigationFABBehavior(navigationBarHeight);
-			((CoordinatorLayout.LayoutParams) fab.getLayoutParams())
-					.setBehavior(fabBehavior);
+			((CoordinatorLayout.LayoutParams) fab.getLayoutParams()).setBehavior(fabBehavior);
 		}
 	}
 
