@@ -30,14 +30,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
-import com.aurelhubert.ahbottomnavigation.notification.AHNotificationHelper;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
@@ -45,6 +37,14 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
+
+import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
+import com.aurelhubert.ahbottomnavigation.notification.AHNotificationHelper;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * AHBottomNavigationLayout
@@ -55,6 +55,7 @@ public class AHBottomNavigation extends FrameLayout {
 	// Constant
 	public static final int CURRENT_ITEM_NONE = -1;
 	public static final int UPDATE_ALL_NOTIFICATIONS = -1;
+    public static final String BOTTOM_BAR_CONTENT_DESCRIPTION_PREFIX = "BottomBar";
 
 	// Title state
 	public enum TitleState {
@@ -386,7 +387,7 @@ public class AHBottomNavigation extends FrameLayout {
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
 			icon.setImageDrawable(item.getDrawable(context));
-			icon.setContentDescription("BottomBar" + item.getTitle(context));
+            icon.setContentDescription(BOTTOM_BAR_CONTENT_DESCRIPTION_PREFIX + item.getTitle(context));
 			title.setText(item.getTitle(context));
 
 			if (titleTypeface != null) {
